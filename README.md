@@ -57,11 +57,11 @@ We use `knex` for migrations, but we created alias helpers on `package.json` to 
 From psql:
 
 - `/c postgres`
--
+- `DROP DATABASE orula`
 - `CREATE DATABASE orula OWNER cyf;`
 
 if it complains that there are active connections then run:
 
 ```sql
-SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'orula'
+SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'orula';
 ```
